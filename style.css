@@ -1,0 +1,357 @@
+@font-face {
+  font-family: "Cera Pro";
+  src: url(./font/Cera\ Pro\ Bold.otf) format("opentype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Cera Pro";
+  src: url(./font/Cera\ Pro\ Medium.otf) format("opentype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Cera Pro";
+  src: url(./font/Cera\ Pro\ Light.otf) format("opentype");
+  font-weight: 400;
+}
+
+:root {
+  --yellow: hsla(45, 86%, 62%, 1);
+  --yellow-700: hsla(45, 71%, 56%, 1);
+  --blue: hsla(195, 86%, 64%, 1);
+  --green: hsla(145, 50%, 62%, 1);
+  --purple-400: hsla(274, 69%, 33%, 1);
+  --purple-700: hsla(284, 59%, 64%, 1);
+
+  --clr-primary: hsla(210, 20%, 17%, 1);
+  --clr-secondary: hsla(0, 0%, 31%, 1);
+
+  --ff-primary: "Cera Pro", sans-serif;
+
+  --fs-xl: 3rem;
+  --fs-l: 2.25rem;
+  --fs-m: 1.5rem;
+  --fs-s: 1rem;
+  --fs-xs: 0.875rem;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--ff-primary);
+  font-size: var(--fs-s);
+  color: var(--clr-secondary);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* || Typography ********************************************** */
+h1,
+h2,
+h3 {
+  line-height: 1.1;
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: var(--fs-l);
+}
+
+h2 {
+  font-size: var(--fs-m);
+}
+
+h3 {
+  font-size: var(--fs-s);
+}
+
+.heading {
+  color: var(--clr-primary);
+}
+
+/* || Navigation ========================================== */
+.navbar {
+  display: flex;
+  align-items: center;
+  padding-block: 1em;
+}
+
+.logo {
+  margin-right: auto;
+}
+
+.nav {
+  padding-block: 1.5em;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.nav__item {
+  font-size: 0.875em;
+  font-weight: 500;
+}
+
+.nav__link {
+  color: var(--clr-primary);
+  font-size: var(--fs-xs);
+}
+
+/* || Hero ********************************************* */
+header {
+  margin-bottom: 1em;
+}
+
+.hero {
+  text-align: center;
+}
+
+/* || App =============================================== */
+.app {
+  padding-block: 3rem;
+  background-color: var(--purple-400);
+  color: #fff;
+}
+
+.app .heading {
+  color: #fff;
+}
+
+.app-intro {
+  text-align: center;
+}
+
+.app__img img {
+  margin-left: 1em; /*because the exported image is skeed to the right*/
+}
+
+.step {
+  margin-bottom: 1.5em;
+  display: flex;
+  gap: 2em;
+  align-items: flex-start;
+}
+
+.step-desc {
+  width: 80%;
+}
+
+.step-num {
+  color: #000;
+  width: 59px;
+  height: 59px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-block: 0.5em;
+}
+
+.step-num p {
+  font-size: 0.75rem;
+}
+
+.num-1 {
+  background-color: var(--yellow);
+}
+
+.num-2,
+.num-3 {
+  background-color: #f2f2f2;
+}
+/* || About ======================================= */
+.about {
+  background: linear-gradient(
+    to right,
+    hsla(252, 98%, 78%, 0.07) 50%,
+    #fff 50%
+  );
+  padding-top: 6rem;
+  padding-bottom: 10rem;
+}
+
+.about h2 {
+  text-align: center;
+}
+
+.choice {
+  margin-block: 1em;
+}
+
+.choice__img {
+  margin-bottom: 1em;
+}
+
+.contact {
+  background-color: var(--yellow);
+  text-align: center;
+  padding-block: 3rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25em;
+  padding-block: 1em;
+  margin-block: 1em;
+}
+
+.form input {
+  padding: 0.75em 1.5em;
+  display: inline-block;
+  border: 2px solid #fff;
+  background-color: var(--yellow);
+  font-size: 1rem;
+  margin-bottom: 1em;
+  width: 100%;
+}
+
+.form .btn {
+  padding: 0.75em 1.5em;
+  display: inline-block;
+  cursor: pointer;
+  background-color: hsla(198, 13%, 20%, 1);
+  color: #fff;
+  font-size: 1rem;
+  border: 2px solid hsla(198, 13%, 20%, 1);
+  margin-bottom: 1em;
+  width: 100%;
+}
+
+footer {
+  background-color: var(--yellow-700);
+  padding: 1em;
+}
+
+.footer {
+  text-align: center;
+}
+
+@media (min-width: 500px) {
+  h1 {
+    font-size: var(--fs-xl);
+  }
+
+  h2 {
+    font-size: var(--fs-l);
+  }
+
+  h3 {
+    font-size: var(--fs-m);
+  }
+
+  body {
+    font-size: 1.125rem;
+  }
+
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2em;
+    text-align: left;
+  }
+
+  .hero__img {
+    width: 570px;
+  }
+
+  .hero__body {
+    width: 511px;
+  }
+
+  .app-intro {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .app-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .app__img {
+    align-self: center;
+    justify-self: center;
+  }
+
+  .step-desc {
+    width: 379px;
+  }
+
+  .choice-list {
+    margin: 0 auto;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .choice {
+    margin: 4rem;
+  }
+
+  .contact .container {
+    width: 32%;
+    margin: 0 auto;
+  }
+
+  .form {
+    flex-direction: row;
+  }
+
+  .form input {
+    width: 342px;
+  }
+
+  .form .btn {
+    width: 157px;
+  }
+
+  .footer {
+    display: flex;
+    align-items: center;
+  }
+
+  .footer p {
+    margin-right: 1em;
+  }
+
+  p.copyright {
+    margin-right: auto;
+  }
+}
