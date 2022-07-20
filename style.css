@@ -21,8 +21,9 @@
   --yellow-700: hsla(45, 71%, 56%, 1);
   --blue: hsla(195, 86%, 64%, 1);
   --green: hsla(145, 50%, 62%, 1);
-  --purple-400: hsla(274, 69%, 33%, 1);
+  --purple-900: hsla(274, 69%, 33%, 1);
   --purple-700: hsla(284, 59%, 64%, 1);
+  --purple-400: hsla(252, 70%, 71%, 0.07);
 
   --clr-primary: hsla(210, 20%, 17%, 1);
   --clr-secondary: hsla(0, 0%, 31%, 1);
@@ -56,8 +57,7 @@ body {
   margin: 0 auto;
 }
 
-img,
-picture {
+img {
   max-width: 100%;
   display: block;
 }
@@ -75,7 +75,7 @@ h1,
 h2,
 h3 {
   line-height: 1.1;
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
 }
 
 h1 {
@@ -101,28 +101,33 @@ h3 {
   padding-block: 1em;
 }
 
-.logo {
-  margin-right: auto;
+.logo-img {
+  width: 150px;
 }
 
 .nav {
-  padding-block: 1.5em;
+  display: none;
+}
+
+.logo {
+  margin-right: auto;
 }
 
 .nav__list {
   display: flex;
   align-items: center;
-  gap: 1em;
-}
-
-.nav__item {
-  font-size: 0.875em;
-  font-weight: 500;
 }
 
 .nav__link {
+  font-weight: 500;
+  font-size: var(--fs-s);
   color: var(--clr-primary);
-  font-size: var(--fs-xs);
+  padding: 1em 1.5em;
+}
+
+.nav__link:hover {
+  background-color: var(--purple-400);
+  color: var(--purple-900);
 }
 
 /* || Hero ********************************************* */
@@ -137,7 +142,7 @@ header {
 /* || App =============================================== */
 .app {
   padding-block: 3rem;
-  background-color: var(--purple-400);
+  background-color: var(--purple-900);
   color: #fff;
 }
 
@@ -150,7 +155,9 @@ header {
 }
 
 .app__img img {
-  margin-left: 1em; /*because the exported image is skeed to the right*/
+  /*because the exported image is skeed to the right*/
+  margin-left: 1em;
+  text-align: center;
 }
 
 .step {
@@ -165,6 +172,7 @@ header {
 }
 
 .step-num {
+  background-color: #f2f2f2;
   color: #000;
   width: 59px;
   height: 59px;
@@ -179,14 +187,6 @@ header {
   font-size: 0.75rem;
 }
 
-.num-1 {
-  background-color: var(--yellow);
-}
-
-.num-2,
-.num-3 {
-  background-color: #f2f2f2;
-}
 /* || About ======================================= */
 .about {
   background: linear-gradient(
@@ -194,20 +194,40 @@ header {
     hsla(252, 98%, 78%, 0.07) 50%,
     #fff 50%
   );
-  padding-top: 6rem;
-  padding-bottom: 10rem;
-}
-
-.about h2 {
+  padding-block: 4rem;
   text-align: center;
 }
 
 .choice {
-  margin-block: 1em;
+  margin-block: 2em;
+  text-align: center;
 }
 
 .choice__img {
-  margin-bottom: 1em;
+  margin-block: 1em;
+  margin-inline: auto;
+}
+
+.setting-img {
+  background-color: var(--green);
+  height: 64px;
+  width: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1em auto;
+}
+
+.shield-img {
+  background-color: var(--purple-700);
+  height: 64px;
+  width: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1em auto;
 }
 
 .contact {
@@ -234,6 +254,8 @@ header {
   font-size: 1rem;
   margin-bottom: 1em;
   width: 100%;
+  color: #fff;
+  border-radius: 5px;
 }
 
 .form .btn {
@@ -246,11 +268,19 @@ header {
   border: 2px solid hsla(198, 13%, 20%, 1);
   margin-bottom: 1em;
   width: 100%;
+  border-radius: 5px;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: var(--purple-400);
+  border-color: var(--purple-700);
 }
 
 footer {
   background-color: var(--yellow-700);
   padding: 1em;
+  color: #fff;
 }
 
 .footer {
@@ -272,6 +302,10 @@ footer {
 
   body {
     font-size: 1.125rem;
+  }
+
+  .nav {
+    display: block;
   }
 
   .hero {
@@ -322,11 +356,16 @@ footer {
   }
 
   .choice {
+    text-align: left;
     margin: 4rem;
   }
 
+  .choice__img {
+    margin-inline: 0 auto;
+  }
+
   .contact .container {
-    width: 32%;
+    width: 40%;
     margin: 0 auto;
   }
 
@@ -336,10 +375,12 @@ footer {
 
   .form input {
     width: 342px;
+    border-radius: 0;
   }
 
   .form .btn {
     width: 157px;
+    border-radius: 0;
   }
 
   .footer {
