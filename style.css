@@ -138,7 +138,8 @@ p {
   padding: 1em 1.5em;
 }
 
-.nav__link:hover {
+.nav__link:hover,
+.nav__link:focus {
   background-color: var(--purple-700);
   color: #fff;
 }
@@ -169,12 +170,15 @@ p {
 
 /* || Hero ********************************************* */
 header {
-  margin-bottom: 1em;
-  position: relative;
+  position: fixed;
+  top: 0;
+  background-color: #fff;
+  width: 100%;
 }
 
 .hero {
   text-align: center;
+  margin-top: 6rem;
 }
 
 /* || App =============================================== */
